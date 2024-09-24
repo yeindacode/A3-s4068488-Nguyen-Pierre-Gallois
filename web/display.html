@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spray.it</title>
+        <link rel="stylesheet" href="display.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument Serif:wght@400&display=swap" />
+
+</head>
+<body>
+    <div class="website-content">
+        <nav>
+            <div class="etstw"><p>(ETSTW)</p></div>
+            <div class="site-info">
+                <p>
+                    01.TYPE 02.DESIGN 03.LOCATE <span class="highlight">04.SPRAY</span> </p>
+            </div>
+            <div class="ye"><p>(YE!)</p></div>
+        </nav>
+        <div class="display-container">
+            <img id="selectedImage" src="" alt="Selected Image" style="width:1400px; height:auto;">
+            
+        </div>
+        <div class="locateText">
+            <p id="displayText"></p>
+        </div>
+        <div class="cover">
+            <img src="./images/cover.png" width="1050">
+        </div>
+        <div class="DESIGN">
+            <p>SPR</p>
+        </div>
+        <div class="DESIGN1">
+            <p>AY</p>
+        </div>
+        <div class="but">
+            <button type="submit" onclick="goback()">
+                <img src="./images/button.png" alt="buttonpng" border="0" width="500"/>
+            </button>
+        </div>
+        <div class="go">
+            <p>(RESTART)</p>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+        // Retrieve the saved image and text data from localStorage
+        const selectedImage = localStorage.getItem('selectedImage');
+        const savedType = localStorage.getItem('yourtype2');
+        const savedStyle = localStorage.getItem('yourstyle');
+        const savedColour = localStorage.getItem('yourcolour');
+        const savedShadow = localStorage.getItem('yourway');
+        const savedFontSize = localStorage.getItem("fontSize");
+        if (savedFontSize) {
+            document.getElementById('displayText').style.fontSize = savedFontSize;
+        }
+
+        // Display the image
+        if (selectedImage) {
+            document.getElementById('selectedImage').src = selectedImage;
+        }
+
+        // Display the text with the saved styles
+        const displayText = document.getElementById('displayText');
+        if (savedType) {
+            displayText.textContent = savedType;
+        }
+        if (savedStyle) {
+            displayText.style.fontFamily = savedStyle;
+        }
+        if (savedColour) {
+            displayText.style.color = savedColour;
+        }
+        if (savedShadow) {
+            displayText.style.textShadow = savedShadow;
+        }
+
+        function goback() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

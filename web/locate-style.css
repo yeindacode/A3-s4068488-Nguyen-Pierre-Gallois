@@ -1,0 +1,265 @@
+@font-face {
+
+    font-family: 'house';
+  
+    src: url('./fonts/FankyBubbleGraffiti-Regular.otf') format('opentype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+  }
+
+@font-face {
+
+    font-family: 'street';
+  
+    src: url(./fonts/aAnotherTag.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+}
+
+@font-face {
+
+    font-family: 'school';
+  
+    src: url(./fonts/schoolin.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+}
+
+@font-face {
+
+    font-family: 'ghetto';
+  
+    src: url(./fonts/detroitghetto.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.website-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+}
+
+nav > div{
+    flex:1;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    text-transform: uppercase;
+}
+
+.site-info{
+    text-align: center;
+}
+
+.ye{
+    text-align: right;
+}
+
+.etstw{
+    text-align: left;
+}
+
+.highlight {
+    color: rgb(255,102,0); /* Change this to any color you prefer */
+}
+
+
+
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    position: relative;
+    left: 72%;
+    top: 22%;
+    z-index: 500;
+}
+
+#displayText {
+    padding: 10px;
+    transition: font-style, text-shadow 0.2s ease;
+}
+
+.display{
+    width: 800px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative;
+    top: 25%;
+    left: 20%;
+    color: black;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    z-index: 1000;
+    font-family: "Instrument Serif";
+
+}
+
+.locateText{
+    width: 800px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative;
+    z-index: 1000;
+    top: 30%;
+    left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: 4%;
+    top: -15%;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: -42%;
+    top: -83%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    filter: none;
+    transition: ease-in-out 0.2s;
+    padding-right: 700px;
+}
+
+button:hover {
+    filter: invert(100%);
+}
+
+.save {
+    position: relative;
+    bottom: 20px;
+    left: 54%;
+    top: 60%;
+    transform: translateX(-50%);
+}
+
+.save button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    filter: none;
+    transition: ease-in-out 0.2s;
+    z-index: 1000;
+}
+
+.save button:hover{
+    filter: invert(100%);
+}
+
+.two{
+    text-align: left;
+    color: white;
+    position: relative;
+    display: flex;
+    font-family: 'Inter';
+    font-size: 50px;
+    left: 90%;
+    margin: 0;
+    left: 82%;
+    top: 5%;
+}
+
+.DESIGN{
+    text-align: left;
+    color: white;
+    position: relative;
+    display: flex;
+    font-family: 'Inter';
+    font-size: 170px;
+    left: 80%;
+    margin: 0;
+}
+
+.DESIGN1{
+    text-align: left;
+    color: white;
+    position: relative;
+    display: flex;
+    font-family: 'Inter';
+    font-size: 170px;
+    left: 45%;
+    top: -61%;
+}
+
+
+.grp{
+    position: relative;
+    align-items: center;
+    top: -37%;
+    left: -80%;
+    display: block;
+}

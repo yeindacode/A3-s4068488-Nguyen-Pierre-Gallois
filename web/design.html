@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spray.it</title>
+        <link rel="stylesheet" href="design-style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument Serif:wght@400&display=swap" />
+        <style>
+            #displayText {
+                padding: 10px;
+                transition: font-size color font-family 0.2s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="website-content">
+            <nav>
+                <div class="etstw"><p>(ETSTW)</p></div>
+                <div class="site-info">
+                    <p>
+                        01.TYPE <span class="highlight">02.DESIGN </span>03.LOCATE 04.SPRAY </p>
+                </div>
+                <div class="ye"><p>(YE!)</p></div>
+            </nav>
+
+            <div class="box">
+                <img alt="" src="./images/design-square.png" width="1400">
+            </div>
+            <div class="save">
+                <button type="submit" onclick="saveData()">
+                    <img src="./images/button.png" alt="buttonpng" border="0" width="500"/>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="display">
+            <p id="displayText"></p>
+        </div>
+        
+        <div id="myDIV">
+            <button class="street btn" onclick="changeFont('street')">STREET</button>
+            <button class="house btn" onclick="changeFont('house')">HOUSE</button>
+            <button class="school btn" onclick="changeFont('school')">SCHOOL</button>
+            <button class="ghetto btn" onclick="changeFont('ghetto')">GHETTO</button>
+            <button class="btn active"></button>
+        </div>
+        <div class="des">
+            <p>(STREET)</p>
+            <p>(HOUSE)</p>
+            <p>(SCHOOL)</p>
+            <p>(GHETTO)</p>
+        </div>
+
+        <div id="myCOL">
+            <button class="classic btn1" onclick="changeColor('white','5px 5px 10px black,-3px 3px 10px black,-3px -3px 10px black,3px -3px 10px black')"></button>
+            <button class="pinky btn1" onclick="changeColor('rgb(249, 0, 124)','5px 5px 20px white,-3px 3px 10px pink,-3px -3px 30px white,3px -3px 10px pink')"></button>
+            <button class="symphony btn1" onclick="changeColor('rgb(0,161,255)','5px 5px 50px blue,-3px 3px 50px white,-3px -3px 50px darkblue,3px -3px 50px lightblue')"></button>
+            <button class="berry btn1" onclick="changeColor('green','15px 5px 10px darkred')"></button>
+            <button class="placeholder btn1 active1"></button>
+        </div>
+        <div class="des1">
+            <p>(CLASSIC)</p>
+            <p>(PINKY)</p>
+            <p>(SYMPHONY)</p>
+            <p>(BERRY)</p>
+        </div>
+
+        <div class="intruc">
+            <p>CHOOSE YOUR STYLE & COLOR-WAY</p>
+        </div>
+        <div class="two">
+            <p>02.</p>
+        </div>
+        <div class="DESIGN">
+            <p>DES</p>
+        </div>
+        <div class="DESIGN1">
+            <p>IGN</p>
+        </div>
+        <div class="it">
+            <p>IT</p>
+        </div>
+
+        
+
+    <script>
+        // Retrieve the saved text and font size from localStorage
+        const yourtype = localStorage.getItem("yourtype");
+        const savedFontSize = localStorage.getItem("fontSize");
+        if (yourtype) {
+            document.getElementById('displayText').textContent = yourtype;
+        }
+        if (savedFontSize) {
+            document.getElementById('displayText').style.fontSize = savedFontSize;
+        }
+
+        // Display the text and apply the saved font size
+        const displayText = document.getElementById('displayText');
+        if (yourtype) {
+            displayText.textContent = yourtype;
+        }
+        if (savedFontSize) {
+            displayText.style.fontSize = savedFontSize;
+        }
+
+        const newtextContent = yourtype
+    </script>
+
+    <script>
+        function changeFont(font) {
+            document.getElementById('displayText').style.fontFamily = font;
+        }
+
+        function changeColor(color,shadow) {
+            document.getElementById('displayText').style.color = color;
+            document.getElementById('displayText').style.textShadow = shadow;
+
+            
+        }
+
+        function saveData() {
+                // Get the value from the input field
+                var type = newtextContent;
+                var style = document.getElementById("displayText").style.fontFamily;
+                var colour = document.getElementById("displayText").style.color;
+                var way = document.getElementById("displayText").style.textShadow;
+                // Save it to localStorage
+                localStorage.setItem("yourtype2", type);
+                localStorage.setItem("yourstyle", style);
+                localStorage.setItem("yourcolour", colour);
+                localStorage.setItem("yourway", way);
+                // Redirect to the next page
+                window.location.href = "locate.html";
+        }
+    </script>
+
+    <script>
+                // Get the container element
+        var btnContainer = document.getElementById("myDIV");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("btn");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+        }
+    </script>
+
+    <script>
+            // Get the container element
+        var btnContainer = document.getElementById("myCOL");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("btn1");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active1");
+        current[0].className = current[0].className.replace(" active1", "");
+        this.className += " active1";
+        });
+        }
+    </script>    
+
+</body>
+</html>

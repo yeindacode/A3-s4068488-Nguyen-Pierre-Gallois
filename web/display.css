@@ -1,0 +1,188 @@
+@font-face {
+
+    font-family: 'house';
+  
+    src: url('./fonts/FankyBubbleGraffiti-Regular.otf') format('opentype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+  }
+
+@font-face {
+
+    font-family: 'street';
+  
+    src: url(./fonts/aAnotherTag.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+}
+
+@font-face {
+
+    font-family: 'school';
+  
+    src: url(./fonts/schoolin.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+}
+
+@font-face {
+
+    font-family: 'ghetto';
+  
+    src: url(./fonts/detroitghetto.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.website-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+}
+
+nav > div{
+    flex:1;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    text-transform: uppercase;
+}
+
+.site-info{
+    text-align: center;
+}
+
+.ye{
+    text-align: right;
+}
+
+.etstw{
+    text-align: left;
+}
+
+.highlight {
+    color: rgb(255,102,0); /* Change this to any color you prefer */
+}
+
+
+
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    position: relative;
+    left: 72%;
+    top: 22%;
+    z-index: 500;
+}
+
+#displayText {
+    padding: 10px;
+    transition: font-style, text-shadow 0.2s ease;
+}
+
+.display-container{
+    position: relative;
+    top: -5%;
+    left: 3%;
+    scale: 70%;
+}
+
+.locateText{
+    position: relative;
+    top: -75%;
+    left: 20%;
+    scale: 70%;
+}
+
+.cover{
+    position: relative;
+    top: -132.5%;
+    z-index: -2;
+    left: 15.7%;
+}
+
+.DESIGN{
+    text-align: left;
+    color: white;
+    position: relative;
+    display: flex;
+    font-family: 'Inter';
+    font-size: 170px;
+    left: -1%;
+    top: -200%;
+    margin: 0;
+}
+
+.DESIGN1{
+    text-align: left;
+    color: white;
+    position: relative;
+    display: flex;
+    font-family: 'Inter';
+    font-size: 170px;
+    left: -1%;
+    top: -208%;
+}
+
+.but{
+    position: relative;
+    top: -260%;
+    left: 2%;
+}
+
+.go{
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    top: -270%;
+    left: 87%;
+
+}

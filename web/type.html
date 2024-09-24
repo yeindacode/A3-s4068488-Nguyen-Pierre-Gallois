@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spray.it</title>
+        <link rel="stylesheet" href="type-style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument Serif:wght@400&display=swap" />
+    </head>
+    <body>
+        <div class="website-content">
+            <nav>
+                <div class="etstw"><p>(ETSTW)</p></div>
+                <div class="site-info">
+                    <p>
+                        <span class="highlight">01.TYPE </span>02.DESIGN 03.LOCATE 04.SPRAY </p>
+                </div>
+                <div class="ye"><p>(YE!)</p></div>
+            </nav>
+
+            <div class="header"><h1>01.TYPEIT</h1></div>
+
+            <div class="box">
+                <img alt="" src="./images/type-square.png" width="1400">
+            </div>
+
+            <div id="input">
+                <input type="text" id="textInput" placeholder="here">
+            </div>
+
+            <button type="submit" onclick="saveData()">
+                <img src="./images/button.png" alt="buttonpng" border="0" width="500"/>
+            </button>
+
+            <div class="info">
+                <p>THE FIRST STEP TO ANY</p>
+                <p>DESIGN IS TO FIGURE</p>
+                <p>OUT WHAT YOU WANT TO DO</p>
+                <p>IN THIS CASE TYPE.</p>
+            </div>
+
+            <div class="tip">
+                <p>TIP:</p>
+                <p>THE LONGER THE TEXT THE SMALLER THE SIZE</p>
+                <p>DON'T USE NUMBERS</p>
+            </div>
+
+            <div class="deco1">
+                <img alt="" src="./images/write - 1.png" width="200">
+            </div>
+
+            <div class="deco2">
+                <img alt="" src="./images/write - 2.png" width="200">
+            </div>
+
+        </div>
+
+            
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            const inputField = document.getElementById("textInput");
+    
+            inputField.addEventListener('input', function() {
+                // Check the length of the input value
+                if (inputField.value.length >= 17) {
+                    // If length is greater than 8, reduce the font size
+                    inputField.style.fontSize = '80px';
+                } else if (inputField.value.length >= 12){
+                    // If length is 8 or less, set the font size back to the original
+                    inputField.style.fontSize = '100px';
+                } else if (inputField.value.length >= 8){
+                    // If length is 8 or less, set the font size back to the original
+                    inputField.style.fontSize = '150px';
+                } else {
+                    // If length is 8 or less, set the font size back to the original
+                    inputField.style.fontSize = '250px';
+                }
+            });
+
+            function saveData() {
+                // Get the value from the input field
+                var type = document.getElementById("textInput").value;
+                // Save it to localStorage
+                localStorage.setItem("yourtype", type);
+                localStorage.setItem("fontSize", inputField.style.fontSize);
+                // Redirect to the next page
+                window.location.href = "design.html";
+            }
+        </script>
+    </body>

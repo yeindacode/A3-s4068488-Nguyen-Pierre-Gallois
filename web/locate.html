@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spray.it</title>
+        <link rel="stylesheet" href="locate-style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument Serif:wght@400&display=swap" />
+
+</head>
+<body>
+    <div class="website-content">
+        <nav>
+            <div class="etstw"><p>(ETSTW)</p></div>
+            <div class="site-info">
+                <p>
+                    01.TYPE 02.DESIGN <span class="highlight">03.LOCATE </span>04.SPRAY </p>
+            </div>
+            <div class="ye"><p>(YE!)</p></div>
+        </nav>
+        <div class="locateText">
+            <p id="finalText"></p>
+        </div>
+        <div class="slider-container">
+            <img id="sliderImage" src="images/bg-1.png" alt="Image Slider" style="width:1400px; height:auto;">
+        </div>
+    
+        <div class="slider-controls">
+            <button id="prevBtn">
+                <img src="./images/left.png" alt="buttonpng" border="0" width="500"/>
+            </button>
+            <button id="nextBtn">
+                <img src="./images/right.png" alt="buttonpng" border="0" width="500"/>
+            </button>
+            
+        </div>
+
+        <div class="grp">
+            <div class="two">
+                <p>03.</p>
+            </div>
+            <div class="DESIGN">
+                <p>LOCATE</p>
+            </div>
+        </div>
+        <div class="DESIGN1">
+            <p>IT</p>
+        </div>        
+
+
+
+    
+
+        
+    </div>
+    <div class="save">
+        <button type="submit" onclick="saveData()">
+            <img src="./images/button.png" alt="buttonpng" border="0" width="400"/>
+        </button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const images = ['images/bg-1.png', 'images/bg-2.png', 'images/bg-3.png', 'images/bg-4.png'];
+        let currentIndex = 0;
+
+        const sliderImage = document.getElementById('sliderImage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Show the current image
+        function updateSliderImage() {
+            sliderImage.src = images[currentIndex];
+        }
+
+        // Go to the previous image
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            updateSliderImage();
+        });
+
+        // Go to the next image
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            updateSliderImage();
+        });
+
+        // Save the selected image in localStorage
+        function saveData() {
+            // Save the selected image
+            const selectedImage = images[currentIndex];
+            
+            // Get other text and style information
+            const type = document.getElementById('finalText').textContent;
+            const style = document.getElementById("finalText").style.fontFamily;
+            const colour = document.getElementById("finalText").style.color;
+            const shadow = document.getElementById("finalText").style.textShadow;
+
+            // Save it to localStorage
+            localStorage.setItem('selectedImage', selectedImage);
+            localStorage.setItem("yourtype2", type);
+            localStorage.setItem("yourstyle", style);
+            localStorage.setItem("yourcolour", colour);
+            localStorage.setItem("yourway", shadow);
+
+            // Redirect to the next page
+            window.location.href = "display.html";
+        }
+    </script>
+
+    <script>
+        // Retrieve the saved text and font size from localStorage
+        const yourtype = localStorage.getItem('yourtype');
+        const yourtype2 = localStorage.getItem("yourtype2");
+        const yourstyle = localStorage.getItem("yourstyle");
+        const yourcolour = localStorage.getItem("yourcolour");
+        const yourway = localStorage.getItem("yourway");
+        const savedFontSize = localStorage.getItem("fontSize");
+        if (yourtype) {
+            document.getElementById('finalText').textContent = yourtype;
+        }
+        if (savedFontSize) {
+            document.getElementById('finalText').style.fontSize = savedFontSize;
+        }
+
+        // Display the text and apply the saved font size
+        const finalText = document.getElementById('finalText');
+        if (yourtype2) {
+            finalText.textContent = yourtype2;
+        }
+        if (yourstyle) {
+            finalText.style.fontFamily = yourstyle;
+        }
+        if (yourcolour) {
+            finalText.style.color = yourcolour;
+        }
+        if (yourway) {
+            finalText.style.textShadow = yourway;
+        }
+    </script>
+</body>
+</html>

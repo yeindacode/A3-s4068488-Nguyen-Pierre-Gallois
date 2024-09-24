@@ -1,0 +1,197 @@
+@font-face {
+
+    font-family: 'home';
+  
+    src: url('./fonts/FankyBubbleGraffiti-Regular.otf') format('opentype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+  }
+
+@font-face {
+
+    font-family: 'street';
+  
+    src: url(./fonts/aAnotherTag.ttf) format('truetype');
+  
+    font-weight: normal;
+  
+    font-style: normal;
+  
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.website-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+}
+
+nav > div{
+    flex:1;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    text-transform: uppercase;
+}
+
+.site-info{
+    text-align: center;
+}
+
+.ye{
+    text-align: right;
+}
+
+.etstw{
+    text-align: left;
+}
+
+.header{
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+h1{
+    text-transform: uppercase;
+    font-family: "Inter";
+    font-size: 310px;
+    font-weight: 200;
+    color: white;
+}
+
+h1 span{
+    position: relative;
+    top: 400px;
+}
+
+
+.highlight {
+    color: rgb(255,102,0); /* Change this to any color you prefer */
+}
+
+.box{
+    position: absolute;
+    left: -10%;
+    z-index: -5;
+    top: 19%;
+}
+
+input {
+    height: 100vh;
+    width: 650px;
+    box-sizing: border-box;
+    border: none;
+    font-family: "Instrument Serif";
+    font-size: 250px;
+    background-color: transparent;
+    position: absolute;
+    top: 2%;
+    left: 30%;
+    color: black;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+input:focus {
+    outline: none;
+}
+
+#textInput {
+    font-size: 250px;
+    transition: font-size 0.2s ease; /* Smooth transition when font size changes */
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+  }
+
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    position: relative;
+    left: 72%;
+    top: 22%;
+    z-index: 500;
+}
+
+button {
+    transition: transform 0.7s ease-in-out;
+}
+  
+button:hover {
+    transform: rotate(360deg);
+}
+
+.info{
+    position: relative;
+    top: -40%;
+    left: 1%;
+    text-transform: uppercase;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+}
+
+.tip{
+    position: relative;
+    top: -48%;
+    left: 30%;
+    text-transform: uppercase;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+}
+
+.deco1{
+    position: relative;
+    left: 64%;
+    top: -60%;
+}
+
+.deco2{
+    position: relative;
+    top: -62%;
+    left: 5%;
+
+}
